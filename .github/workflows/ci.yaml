@@ -1,0 +1,20 @@
+name: CI
+
+# Triggers
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  # Give job a name
+  job-name:
+    # Define runner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello from Actions"
+      - name: Print goodbye
+        run: echo "Goodbye"
