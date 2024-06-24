@@ -1,1 +1,18 @@
+name: Filter
 
+on:
+    push:
+        branches:
+            - main
+            - 'rel/v*'
+        tags:
+            - v1.*
+            - beta
+   
+jobs:
+    on_trigger:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: New trigger
+              run: echo "Hello from actions"
