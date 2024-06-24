@@ -1,1 +1,13 @@
+name: Trigger on issues
 
+on:
+    issues:
+        types:  [opened, edited, closed]
+
+jobs:
+    notify-for-issue:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Issue 
+              run: echo "New issue activity"
