@@ -11,7 +11,7 @@ jobs:
       - name: Uploading report
         run: echo Uploading report
       - name: Upload
-        uses: actions/upload-artifacts@v3
+        uses: actions/upload-artifact@v3
         with: 
           name: report
           path: |
