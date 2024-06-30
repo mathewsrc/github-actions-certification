@@ -14,6 +14,8 @@ jobs:
       output1: ${{ steps.step1.test }}
       output2: ${{ steps.step2.test }}
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - id: step1
         run: echo "test=hello" >> "$GITHUB_OUTPUT"
       - id: step2
