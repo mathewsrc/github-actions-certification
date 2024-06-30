@@ -20,7 +20,7 @@ jobs:
         run: echo "test=world" >> "$GITHUB_OUTPUT"
       - name: Output a value
         id: output_files
-        run: find **/*.yaml -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+        run: find src/*.py -type f -execdir echo "script-file={}" >> $GITHUB_OUTPUT ';'
   job2:
     runs-on: ubuntu-latest
     needs: job1
