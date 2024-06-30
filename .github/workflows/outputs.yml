@@ -1,0 +1,17 @@
+name: 'Output job values'
+
+on:
+  workflow_dispatch:
+  push: 
+    branches: 
+      - main
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    outputs: 
+      script-file: ${{ steps.output_files.outputs.script-file }}
+    steps:
+      - name: Output a value
+        id: output_files
+        run: find .github/workflows/*.yaml -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
