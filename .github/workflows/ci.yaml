@@ -17,9 +17,9 @@ jobs:
       - name: Print greeting
         run: echo "Hello from Actions"
       - name: Get code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Setup python 3.10
-      - uses: actions/setup-python@v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Cache dependencies for multiple jobs (reduce time)
