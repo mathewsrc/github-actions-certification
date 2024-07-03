@@ -7,10 +7,14 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
+env:
+  MY_GLOBAL_ENV_VARIABLE: available_on_all_jobs
 jobs:
   # Give job a name
   job-name:
+    env:
+      MY_JOB_ENV_VARIABLE: job_level_variable
+      PORT: 8080
     # Define runner
     runs-on: ubuntu-latest
     steps:
@@ -31,3 +35,5 @@ jobs:
             ${{ runner.os }}-pip- 
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Print out env variable
+        run: echo $PORT
