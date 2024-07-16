@@ -1,4 +1,4 @@
-name: Random Fun Workflow
+name: Continue on error
 
 on:
   push:
