@@ -19,11 +19,11 @@ jobs:
   test2:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Out global variable
-        run: echo "Global variable with $ - $GLOBAL_VARIABLE"
-      - name: Print out global variable
-        run: echo "Global variable  with {{}} - ${{ env.GLOBAL_VARIABLE }}"
-      - name: Print out local variable
-        run: echo "Global variable with $ - $JOB_1_VARIABLE"
-      - name: Print out local variable
-        run: echo "Global variable with {{}} - ${{ env.JOB_1_VARIABLE }}"
+      - name: Print Out global variable 1
+        run: echo "Global variable with $GLOBAL_VARIABLE"
+      - name: Print out global variable 2
+        run: echo "Global variable with ${{ env.GLOBAL_VARIABLE }}"
+      - name: Print out local variable 3
+        run: echo "Global variable with $JOB_1_VARIABLE"
+      - name: Print out local variable 4
+        run: echo "Global variable with ${{ env.JOB_1_VARIABLE }}"
