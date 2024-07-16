@@ -1,4 +1,4 @@
-name: Enviromental variables
+name: Environmental variables
 
 on:
  push:
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Out global variable
-        run: echo $GLOBAL_VARIABLE
+        run: echo "Global variable with $ - $GLOBAL_VARIABLE"
       - name: Print out global variable
-        run: echo ${{ env.GLOBAL_VARIABLE }}
+        run: echo "Global variable  with {{}} - ${{ env.GLOBAL_VARIABLE }}"
       - name: Print out local variable
-        run: echo $JOB_1_VARIABLE
+        run: echo "Global variable with $ - $JOB_1_VARIABLE"
       - name: Print out local variable
-        run: echo ${{ env.JOB_1_VARIABLE }}
+        run: echo "Global variable with {{}} - ${{ env.JOB_1_VARIABLE }}"
