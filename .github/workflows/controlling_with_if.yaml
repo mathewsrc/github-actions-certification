@@ -40,6 +40,7 @@ jobs:
         run: echo "Previous job failure"
 
   job4:
+    needs: [job1, job2]
     if: success()
     runs-on: ubuntu-latest
     steps:
