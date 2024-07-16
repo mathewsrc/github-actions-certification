@@ -24,6 +24,6 @@ jobs:
       - name: Print out global variable 2
         run: echo "Global variable with ${{ env.GLOBAL_VARIABLE }}"
       - name: Print out local variable 3
-        run: echo "Global variable with $JOB_1_VARIABLE"
+        run: echo "Local variable with $JOB_1_VARIABLE"
       - name: Print out local variable 4
-        run: echo "Global variable with ${{ env.JOB_1_VARIABLE }}"
+        run: echo "Local variable with ${{ env.JOB_1_VARIABLE }}"
