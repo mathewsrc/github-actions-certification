@@ -1,0 +1,29 @@
+name: Enviromental variables
+
+on:
+ push:
+   branches:
+     - main
+     - dev
+env:
+  GLOBAL_VARIABLE: global-variable
+  
+jobs:
+  test1:
+    env:
+      JOB_1_VARIABLE: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Out global variable
+        run: echo $GLOBAL_VARIABLE
+      - name: Print out global variable
+        run: echo ${{ env.GLOBAL_VARIABLE }}
+      - name: Print out local variable
+        run: echo $JOB_1_VARIABLE
+      - name: Print out local variable
+        run: echo ${{ env.JOB_1_VARIABLE }}
