@@ -3,7 +3,7 @@ name: Controlling with if command
 on:
   push:
     branches:
-      -main
+      - main
   workflow_dispatch:
   
 jobs:
@@ -19,7 +19,7 @@ jobs:
         name: Step2
         run: echo "test2=hello2" >> "$GITHUB_OUTPUT"
       - name: Run on step2 failure
-        if: steps.step2.outcome == 'failure'
+        if: failure() && steps.step2.outcome == 'failure'
         run: echo "step2 failure"
       - name: Run on step2 success
         if: steps.step2.outcome == 'success'
@@ -31,4 +31,19 @@ jobs:
       - env:
           OUTPUT1: ${{ needs.job1.outputs.output1 }}
         run: echo "$OUTPUT1"
+
+  job3: 
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: From job3
+        run: echo "Previous job failure"
+
+  job4:
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: From job4
+        run: echo "Previous jobs succeed"
+    
       
