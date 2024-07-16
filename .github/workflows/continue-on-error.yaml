@@ -1,0 +1,28 @@
+name: Random Fun Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  random_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up environment
+        run: echo "Setting up environment..."
+
+      - name: Random Step
+        continue-on-error: true
+        run: |
+          # Generate a random number between 1 and 10
+          RANDOM_NUMBER=$((1 + RANDOM % 10))
+
+          # Introduce some randomness
+          if [[ $RANDOM_NUMBER -gt 5 ]]; then
+            echo "Random step succeeded! 🎉"
+          else
+            echo "Random step failed! 😢"
+            exit 1
+          fi
