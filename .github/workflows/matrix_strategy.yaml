@@ -1,0 +1,17 @@
+name: Matrix strategy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        versions: [2,4,6]
+        operating-system: [ubuntu-latest]
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - name: Build
+        run: echo "Building with version - ${{ matrix.version }}"
