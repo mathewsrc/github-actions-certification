@@ -2,9 +2,15 @@ name: Use reusable workflow
 
 on: push
 
+env:
+  MY_AWS_SECRET: my_secret
+
 jobs:
   Deploy:
     uses: ./.github/workflows/reusable_workflow.yaml
     with: 
       s3_bucket_name: llama_models
+    secrets:
+      aws_secret: ${{ env.MY_AWS_SECRET }}
+    
 
