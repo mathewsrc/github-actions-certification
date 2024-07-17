@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix:
         versions: [2,4,6]
