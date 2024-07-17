@@ -10,9 +10,20 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        versions: [2,4,6]
-        operating-system: [ubuntu-latest]
+        version: [2,4,6]
+        operating-system: [ubuntu-latest, windows-latest]
+        include: 
+          - version: 8
+            operating-system: ubuntu-latest
+            size: 10
+        exclude:
+          - version: 2
+            operating-system: windows-latest
+          - version: 4
+            operating-system: windows-latest
+          - version: 6
+            operating-system: windows-latest
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Build
-        run: echo "Building with version - ${{ matrix.versions }}"
+        run: echo "Building with version - ${{ matrix.version }}"
