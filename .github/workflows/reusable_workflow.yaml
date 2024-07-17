@@ -8,7 +8,10 @@ on:
         type: string
         required: true
         default: models
-
+    secrets:
+      aws_secret:
+        description: The AWS secret
+        required: true
 jobs:
   Build:
     runs-on: ubuntu-latest
