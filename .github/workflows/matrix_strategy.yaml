@@ -14,4 +14,4 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Build
-        run: echo "Building with version - ${{ matrix.version }}"
+        run: echo "Building with version - ${{ matrix.versions }}"
