@@ -11,6 +11,6 @@ jobs:
     with: 
       s3_bucket_name: llama_models
     secrets:
-      aws_secret: ${{ env.MY_AWS_SECRET }}
+      aws_secret: ${{ my_secret }}
     
 
