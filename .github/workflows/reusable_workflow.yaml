@@ -1,0 +1,10 @@
+name: Reusable workflow
+
+on: [workflow_call]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying..."
