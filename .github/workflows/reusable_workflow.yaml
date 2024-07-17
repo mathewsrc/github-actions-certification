@@ -1,10 +1,17 @@
 name: Reusable workflow
 
-on: [workflow_call]
+on: 
+  workflow_call:
+    inputs:
+      s3_bucket_name:
+        description: The name of the S3 bucket where the model will be uploaded
+        type: string
+        required: true
+        default: models
 
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
-        run: echo "Deploying..."
+        run: echo "Deploying to s3 directory - ${{ inputs.s3_bucket_name }}"
