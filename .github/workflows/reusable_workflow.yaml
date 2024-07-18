@@ -20,7 +20,7 @@ on:
 jobs:
   deploy:
     outputs:
-      status: ${{ steps.status.outputs.success }}
+      status: ${{ steps.status.outputs.status }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
