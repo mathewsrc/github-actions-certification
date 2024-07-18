@@ -3,11 +3,17 @@ name: Use reusable workflow
 on: push
 
 jobs:
-  Deploy:
+  deploy:
     uses: ./.github/workflows/reusable_workflow.yaml
     with: 
       s3_bucket_name: llama_models
     #secrets:
       #aws_secret: ${{ secrets.my_secret }}
+  status:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print out status
+        run: echo "Status -  ${{ needs.deploy.outputs.status }}"
     
 
