@@ -8,13 +8,23 @@ on:
         type: string
         required: true
         default: models
-    secrets:
-      aws_secret:
-        description: The AWS secret
-        required: true
+    #secrets:
+      #aws_secret:
+        #description: The AWS secret
+        #required: true
+    outputs:
+      status: 
+        description: The status of the deployment
+        value: ${{ jobs.deploy.outputs.status }}
+        
 jobs:
-  Build:
+  deploy:
+    outputs:
+      status: ${{ steps.status.outputs.success }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
         run: echo "Deploying to s3 directory - ${{ inputs.s3_bucket_name }}"
+      - name: Status
+        id: status
+        run: echo "status=success" >> "$GITHUB_OUTPUT"
