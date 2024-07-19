@@ -1,9 +1,6 @@
 name: Controlling with if command
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   
 jobs:
