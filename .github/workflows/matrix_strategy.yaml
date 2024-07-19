@@ -1,10 +1,8 @@
 name: Matrix strategy
 
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch:
+  
 jobs:
   build:
     continue-on-error: true
