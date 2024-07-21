@@ -1,0 +1,8 @@
+name: List all files
+description: List all files using Bash ls command
+author: Matheus
+runs:
+  using: "composite"
+  steps: 
+    - run: ${{ github.action_path }}/scripts/list_files.sh
+      shell: bash
