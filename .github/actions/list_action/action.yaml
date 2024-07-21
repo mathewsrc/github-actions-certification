@@ -4,5 +4,7 @@ author: Matheus
 runs:
   using: "composite"
   steps: 
+    - run: chmod +x ./scripts/list_files.sh
+      shell: bash
     - run: ./scripts/list_files.sh
       shell: bash
