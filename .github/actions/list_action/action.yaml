@@ -4,5 +4,5 @@ author: Matheus
 runs:
   using: "composite"
   steps: 
-    - run: ${{ github.action_path }}/scripts/list_files.sh
+    - run: ./scripts/list_files.sh
       shell: bash
