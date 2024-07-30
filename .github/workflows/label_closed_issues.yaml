@@ -1,4 +1,4 @@
-name: Assign closed issue label 
+name: Assign closed issue label
 
 on:
   issues:
@@ -12,14 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
-        env:
-          ACTOR: ${{ github.actor }}
         run: |
           curl -X POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          -d '{
-                "labels": [ACTOR]
-          }' \ 
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+          -d '{"labels":["${{ github.actor }}"]}'
           --fail
