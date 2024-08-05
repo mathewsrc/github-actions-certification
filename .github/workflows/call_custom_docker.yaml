@@ -3,6 +3,12 @@ name: Call custom docker action
 on: 
     workflow_dispatch:
 
+inputs:
+  top_k:  
+    description: 'k largest elementst'
+    required: true
+    default: 1
+
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -12,5 +18,8 @@ jobs:
             - name: Call custom docker action
               id: custom_docker
               uses: ./.github/actions/custom_docker
+              
             - name: Print output
-              run: echo "${{ steps.custom_docker.outputs.shape }}"
+              run: |
+               echo "${{ steps.custom_docker.outputs.shape }}"
+               echo "${{ steps.custom_docker.outputs.top_k }}"
