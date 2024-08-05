@@ -1,6 +1,7 @@
 import polars as pl
 import os
 
+top_k = os.getenv("top_k")
 
 def main():
     df = pl.DataFrame(
@@ -12,6 +13,9 @@ def main():
     print()
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
         print(f'shape={df.shape}', file=fh)
+    
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        print(f'top_k={top_k}', file=fh)
     
 if __name__ == "__main__":
     main()
