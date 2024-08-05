@@ -27,5 +27,8 @@ def main():
                 print(f"TOP_K={line}")
                 break
     
+    # write a csv file 
+    df.head(3).to_csv("top_k.csv")
+    
 if __name__ == "__main__":
     main()
