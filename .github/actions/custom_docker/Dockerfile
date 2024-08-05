@@ -5,7 +5,7 @@ RUN python -m pip install --upgrade pip
 RUN pip install requests polars ruff 
 
 # Github action directory (defalt: /github/workspace)
-WORKDIR /action 
+#WORKDIR /action 
 
 COPY ./main.py .
 
