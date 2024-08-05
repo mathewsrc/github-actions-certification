@@ -10,6 +10,6 @@ WORKDIR /action
 COPY ./main.py .
 
 # post entrypoint
-COPY post_entrypoint.sh .
+COPY ./post_entrypoint.sh .
 
 CMD ["python", "main.py"]
