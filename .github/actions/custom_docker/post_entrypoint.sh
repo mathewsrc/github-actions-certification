@@ -3,10 +3,7 @@ set -e
 
 echo "Starting post-entrypoint steps..."
 
-# Add your post-action logic here
-# For example:
-# - Clean up resources
-# - Perform final checks
-# - Log completion status
+# Delete garbage.txt
+rm -f garbage.txt
 
 echo "Post-entrypoint steps completed successfully."
