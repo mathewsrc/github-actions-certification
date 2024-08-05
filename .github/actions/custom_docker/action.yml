@@ -5,5 +5,4 @@ description: A custom docker action
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: 'entrypoint.sh'
   post-entrypoint: 'post_entrypoint.sh'
