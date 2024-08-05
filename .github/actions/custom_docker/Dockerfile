@@ -4,12 +4,11 @@ RUN python -m pip install --upgrade pip
 
 RUN pip install requests polars ruff 
 
-# Github action directory (defalt: /github/workspace)
-WORKDIR /action 
-
-COPY ./main.py /action/main.py
+COPY main.py /main.py
 
 # post entrypoint
-COPY ./post_entrypoint.sh .
+COPY post_entrypoint.sh /post_entrypoint.sh
 
-CMD ["python", "action/main.py"]
+RUN ls 
+
+CMD ["python", "main.py"]
