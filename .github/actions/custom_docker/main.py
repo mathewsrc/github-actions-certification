@@ -1,7 +1,7 @@
 import polars as pl
 import os
 
-top_k = os.getenv("top_k")
+top_k = os.getenv("INPUT_TOP_K")
 
 def main():
     df = pl.DataFrame(
