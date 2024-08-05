@@ -2,12 +2,11 @@ name: Call custom docker action
 
 on: 
     workflow_dispatch:
-
-inputs:
-  top_k:  
-    description: 'k largest elementst'
-    required: true
-    default: 1
+      inputs:
+        top_k:  
+          description: 'k largest elementst'
+          required: true
+          default: 1
 
 jobs:
     build:
