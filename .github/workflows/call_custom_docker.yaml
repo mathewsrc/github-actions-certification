@@ -10,4 +10,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Call custom docker action
+              id: custom_docker
               uses: ./.github/actions/custom_docker
+            - name: Print output
+              run: echo "${{ steps.custom_docker.outputs.shape }}"
