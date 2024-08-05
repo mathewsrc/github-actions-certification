@@ -30,5 +30,9 @@ def main():
     # write a csv file 
     df.head(3).write_csv('df.csv')
     
+    # create a new text file called garbage.txt and save it 
+    with open('garbage.txt', 'w') as fh:
+        fh.write('this is garbage')    
+    
 if __name__ == "__main__":
     main()
