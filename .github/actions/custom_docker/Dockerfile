@@ -12,4 +12,7 @@ COPY main.py /app/main.py
 COPY post_entrypoint.sh /app/post_entrypoint.sh
 RUN chmod +x /app/post_entrypoint.sh
 
+# Add /app to PATH
+ENV PATH="/app:${PATH}"
+
 CMD ["python", "/app/main.py"]
