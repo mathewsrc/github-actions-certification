@@ -16,6 +16,9 @@ COPY main.py /main.py
 COPY post_entrypoint.sh /post_entrypoint.sh
 RUN chmod +x /post_entrypoint.sh
 
+# Add /post_entrypoint.sh to PATH
+ENV PATH="/:${PATH}"
+
 # Add /app to PATH
 #ENV PATH="/app:${PATH}"
 
