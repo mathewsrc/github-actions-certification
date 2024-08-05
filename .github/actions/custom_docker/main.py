@@ -28,7 +28,7 @@ def main():
                 break
     
     # write a csv file 
-    df.head(3).to_csv("top_k.csv")
+    df.head(3).write_csv('df.csv')
     
 if __name__ == "__main__":
     main()
