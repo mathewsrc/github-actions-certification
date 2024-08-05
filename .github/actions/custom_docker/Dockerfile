@@ -7,6 +7,9 @@ RUN pip install requests polars ruff
 # Github action directory (defalt: /github/workspace)
 WORKDIR /action 
 
-COPY ./main.py /action/main.py
+COPY ./main.py .
 
-CMD ["python", "/action/main.py"]
+# post entrypoint
+COPY post_entrypoint.sh .
+
+CMD ["python", "main.py"]
