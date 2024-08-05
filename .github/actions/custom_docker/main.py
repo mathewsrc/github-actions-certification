@@ -24,7 +24,7 @@ def main():
         # look for the top_k value
         for line in fh:
             if line.startswith('TOP_K='):
-                print(line)
+                print(f"TOP_K={line}")
                 break
     
 if __name__ == "__main__":
