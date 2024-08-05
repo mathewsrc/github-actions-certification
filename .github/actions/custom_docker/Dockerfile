@@ -6,4 +6,6 @@ RUN pip install requests beautifulsoup4 polars ruff pytest
 
 COPY ./main.py /main.py
 
+ENTRYPOINT ["python"]
+
 CMD ["python", "/main.py"]
