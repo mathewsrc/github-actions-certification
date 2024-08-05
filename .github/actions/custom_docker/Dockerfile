@@ -4,6 +4,8 @@ RUN python -m pip install --upgrade pip
 
 RUN pip install requests polars ruff 
 
-COPY ./main.py main.py
+WORKDIR /action 
 
-CMD ["python", "./main.py"]
+COPY ./main.py /action/main.py
+
+CMD ["python", "/action/main.py"]
