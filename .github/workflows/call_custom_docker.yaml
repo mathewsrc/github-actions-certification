@@ -7,6 +7,8 @@ on:
           description: 'k largest elementst'
           required: true
           default: 1
+env:
+    TOP_K: ${{ github.event.inputs.top_k }}
 
 jobs:
     build:
@@ -14,6 +16,8 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+            - name: TOP_K
+              run: echo 'TOP_K=${{ env.TOP_K }}' >> $GITHUB_OUTPUT
             - name: Call custom docker action
               id: custom_docker
               uses: ./.github/actions/custom_docker
