@@ -3,6 +3,8 @@ import os
 
 top_k = os.getenv("INPUT_TOP_K")
 
+env_file = os.getenv('GITHUB_ENV')
+
 def main():
     df = pl.DataFrame(
         {
@@ -16,6 +18,14 @@ def main():
     
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
         print(f'top_k={top_k}', file=fh)
+        
+    # print out top_k from env file
+    with open(env_file, 'r') as fh:
+        # look for the top_k value
+        for line in fh:
+            if line.startswith('TOP_K='):
+                print(line)
+                break
     
 if __name__ == "__main__":
     main()
