@@ -2,7 +2,19 @@ name: Custom docker action
 
 description: A custom docker action
 
+inputs:
+  top_k:  
+    description: 'k largest elements'
+    required: true
+    default: '1'
+
+outputs:
+  top_k: # id of output
+    description: 'The k largest elements'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+      - ${{ inputs.top_k }}
   post-entrypoint: 'post_entrypoint.sh'
