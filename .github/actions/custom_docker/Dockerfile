@@ -4,8 +4,6 @@ RUN python -m pip install --upgrade pip
 
 RUN pip install requests beautifulsoup4 polars ruff pytest
 
-COPY ./main.py /main.py
+COPY ./main.py main.py
 
-ENTRYPOINT ["python"]
-
-CMD ["python", "/main.py"]
+CMD ["python", "main.py"]
