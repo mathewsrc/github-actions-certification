@@ -18,6 +18,8 @@ jobs:
             - name: Call custom docker action
               id: custom_docker
               uses: ./.github/actions/custom_docker
+              with:
+                top_k: ${{ inputs.top_k }}
               
             - name: Print output
               run: |
