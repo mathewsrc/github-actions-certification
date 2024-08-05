@@ -8,7 +8,8 @@ def main():
             "b": [4, 5, 6],
         }
     )
-    print(df.shape)
+    print()
+    print(f'::set-output name=shape::{df.shape}')
     
 if __name__ == "__main__":
     main()
