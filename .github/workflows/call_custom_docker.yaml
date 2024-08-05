@@ -28,3 +28,9 @@ jobs:
               run: |
                echo "${{ steps.custom_docker.outputs.shape }}"
                echo "${{ steps.custom_docker.outputs.top_k }}"
+
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: workspace_artifacts
+                path: ${{ github.workspace }}
