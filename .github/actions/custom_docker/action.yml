@@ -6,5 +6,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   entrypoint: 'entrypoint.sh'
-  post-if: always
   post-entrypoint: 'post_entrypoint.sh'
