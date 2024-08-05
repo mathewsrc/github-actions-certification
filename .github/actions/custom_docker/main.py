@@ -1,4 +1,5 @@
 import polars as pl
+import os
 
 
 def main():
@@ -9,7 +10,8 @@ def main():
         }
     )
     print()
-    print(f'::set-output name=shape::{df.shape}')
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        print(f'shape={df.shape}', file=fh)
     
 if __name__ == "__main__":
     main()
