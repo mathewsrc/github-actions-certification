@@ -12,4 +12,4 @@ COPY ./main.py /action/main.py
 # post entrypoint
 COPY ./post_entrypoint.sh .
 
-CMD ["python", "./action/main.py"]
+CMD ["python", "action/main.py"]
